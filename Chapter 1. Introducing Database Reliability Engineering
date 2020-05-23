@@ -6,3 +6,12 @@ and operate production data stores and data structures within.
 As database reliability engineers, we must take the operational principles and the depth of database expertise 
 that we possess one step further.
 
+1.传统的数据保护
+  开发与运维职能完全独立
+  software：商用软件  ->  开源软件  -> 安全防护，日志保护/审计，冗余部署，备份与灾难恢复
+  hardware：专用服务器/OS/Network/防火墙  -> 共用服务器/Linux/Network ->  自我冗余：硬件/开源软件/团队
+  
+2.虚拟化/临时性的数据云存储：自动化的配置/部署
+  
+  
+  
