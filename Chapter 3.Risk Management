@@ -18,13 +18,51 @@
   5.要有前瞻性，随时准备架构或者流程的升级改造
   6.尽最大的努力，做最坏的打算
   
-三、working process
+三、working process : Resiliency over brittle high availability!
 bootstrap ->  service risk evaluation ->  architecture inventory  ->  risk prioritization   ->  risk control decision making
 
   A.定义SLO：DBRE不是为了使用/部署一套复杂的系统来预防所有的风险，而是以一种有序的、分级的、文档化的自动化系统，可以将风险控制在一定范围之内、或者尽量减轻风险影响，
 保证整个资源一直处于某种可用状态！
+
   B.风险预估：若违反SLO，系统降级情况如何？ ->  服务体验差，有其他竞争服务时，客户丢失状况？
+  
   C.架构清单：架构各组件，组件间的信息流通，其他任务（任务编排/ETL/CDN/Cache/BR/日志分析）
+    Component   Count
+    ELB         2
+    web server  20
+    redis       4
+    DB cluster  4
+    CDN         service
+    Jobs        CDN refresh,Redis refresh,DB backups,ELT process,Redshift data warehouse
+    
+  D.界定风险级别
+    Impact    Server  Major   Moderate      Minor       Negligible
+    Likelihood\
+    Certain   UA        UA      High        Moderate    Acceptable
+    Likely    UA        High    High        Moderate    Acceptable
+    Possible  UA        High    Moderate    Moderate    Acceptable
+    Unlikely  High    Moderate  Moderate    Acceptable  Acceptable
+    Rare      High    Moderate  Acceptable  Acceptable  Acceptable
+    
+    概率以影响的客户比例为准，如果是某个组件，则考虑组件占比：Certain >50%，Likely 26-50%，Possible 11-25%，Unlikely 5-10%，Rare <5%
+    
+    SLO：以99.9%为例，一周10080分钟，超过10分钟即违反SLO
+    影响度以可用性SLI为准，Server>=10min, Major 5-10min, Moderate 3-5min, Minor 1-3min, 可忽略Negligible 1min以内
+    也可以转换为等比的影响受众，[,10%,5%,3%,1%]
   
-  
-  
+    比如：
+      web server 20个实例，至少能保证一半以上同时工作，即风险概率最高50%-> "Likely"; 如果一半的实例挂掉，至少需要5mins从备份中恢复，
+    即影响度为Major；于是Impact=High
+      后来，通过自动修复系统，MTBF时间缩短为1分钟，即影响度为Minor，于是Impact=Moderate
+      
+    现在，架构清单进化为：
+    Component     Likelihood      Impact      Risk
+    ELB           Possible        Server      Unacceptable
+    web servers   Likely          Major       High
+    DB cluster    Possible        Major       High
+    Redis cluster Possible        Major       High
+    CDN refressh  Unlikely        Minor       Acceptable
+    ...
+    
+  E.风险控制决定，优先处理不可接受的和高风险
+    
