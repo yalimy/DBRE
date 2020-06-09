@@ -18,7 +18,7 @@
   5.要有前瞻性，随时准备架构或者流程的升级改造
   6.尽最大的努力，做最坏的打算
   
-三、working process : Resiliency over brittle high availability!
+三、working process : A.Resiliency over brittle high availability! B.It is a process of iterating.
 bootstrap ->  service risk evaluation ->  architecture inventory  ->  risk prioritization   ->  risk control decision making
 
   A.定义SLO：DBRE不是为了使用/部署一套复杂的系统来预防所有的风险，而是以一种有序的、分级的、文档化的自动化系统，可以将风险控制在一定范围之内、或者尽量减轻风险影响，
