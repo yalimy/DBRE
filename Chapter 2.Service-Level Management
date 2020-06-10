@@ -57,13 +57,11 @@ SLM: Service-Level Management
   4.数据持久化存储，成本与效率：
     针对不同的业务需求，选择相应的DB实现方式 ->  兼顾效率与成本
 
-
   5.定义SLO的原则：
     简洁
     以用户为中心
     循序渐进
   
-
 四、监控：Real User Monitoring（RUM）
 基于以上的SLI/SLO定义，实施近实时监控，那么如何使用这些监控信息：
   自动故障恢复
