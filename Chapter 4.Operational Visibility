@@ -18,3 +18,26 @@
   
 
 二、OpsViz架构
+一个好的架构应该是这样：
+	1.自动化发现服务/应用，无需手动配置agent监控；
+	2.产生的事件数据被路由到相应的模块/节点；
+	2.海量数据去中心化，产生近结构化、分布式存储，近实时的查询；
+	3.可视化输出
+	
+	考虑：
+	1.数据的输入方式: [is The Data Safe? Is the Service Up? Are the consumers in Pain?]
+	2.分布式监控 [Instrumenting the Application, Server/Instance, Datastore, Single/Aggregational]
+	3.事件及其日志	->	
+	4.Datastore Details:
+		Connection Level:	USE
+		Internal Visibility: 
+			Throughput And Latency
+			Commits, Redo, Journaling
+			Replication State
+			Memory Structures
+			Locking and Concurrency
+USE:
+	U: 资源使用率，对应Latency
+	S: 资源饱和度，对应请求量
+	E: Errors
+
