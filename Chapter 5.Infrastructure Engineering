@@ -1,0 +1,34 @@
+一、物理服务器
+1.system kernel
+	user resource limits : file descriptors, semaphores, processes
+	I/O scheduler : [noop] deadline cfq
+2.memory allocation and fragmentation : glibc' malloc , tcmmalloc, jemalloc, TLB(Translation lookaside buffer), THP(Transparent Huge Pages)
+3.disable swapping
+4.NUMA : numactl --interleave=all, 清空OS缓存 sysctl -w vm.drop_caches=3
+5.NETWORK : backlog , time_out (end-to-end, level-to-level)
+6.STORAGE : capacity, throughput, latency, availability, durability [磁盘类型，IO类型，IOPS，IO延迟(O_direct),磁盘总线，缓存，磁盘冗余]
+
+
+二、虚拟化：共享底层资源，整合CODE
+优点：
+	保证OS，DB SYSTEM，HARDWARE完全相同，可以整合到CI/CD
+
+缺点：
+	不完美的持久化数据
+	必须考虑高可用性：自动化、failover、backup、recovery
+	弹性扩展
+	应用对不稳定性的容忍程度
+
+
+三、容器化
+
+
+四、DBaaS
+Abstracted services add their own challenges, but more important, they allow you to focus where your specialized knownledge can create the most value.
+Specialists should do the decisions :
+	which database engine to use
+	how to model your data
+	an appropriate data access framework
+	database security decisions
+	data management and growth/capacity plans
+	
