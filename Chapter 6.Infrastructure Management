@@ -1,0 +1,28 @@
+Infrastructure as Code, explain the various components of infrastructure management via code.
+
+一、Version Control
+  OS images, Source Code, Scripts, Libraries, Packages, Configuration files, database binaries, etc
+  
+二、Configuration Definition
+参数化，幂等性
+
+三、Baking(static) /Frying(dynamic) from Configuration
+
+四、Maintaining Configuration
+immutable infrastructure , Configuration version control
+
+五、ENforcement of Configuration Definitions
+1.Configuration Synchronization
+2.Component redeploys
+
+六、Infrastructure Definition and Orchestration
+1.Separating Vertically
+2.Sepatated Tiers (Horizatal Definitions)
+
+The dynamic infrastructure requires a sevice catalog to ensure that any component can effectively share its state to any other component for communication and integration.
+
+七、Acceptance Testing and Compliance
+
+八、Service Catalog， Service discovery
+
+九、Bringing It All Together
