@@ -1,1 +1,43 @@
+This Chapter is to look at how DBREs can effectively utilize their time,skills,and experience to support SWE process that utilizes CI/CD without becoming a bottleneck.
 
+一、Education and Collaboration
+1.Become a Funnel
+
+2.Foster Conversations
+  AMAs stands for "ask me anythins"
+  
+3.Domain-Specific Knownledge
+
+
+二、Architecture and Data Model Standards
+Datatype standards
+Indexing
+Metadata attributes
+Datastores to use
+Metrics to expose
+Design patterns
+Migration and DB change patterns
+
+
+三、Integration into CI/CD
+必须满足的必要条件：
+  version control system：首要前提，DB相关都要进行版本控制
+  Database build Automation：data scrubbed
+  Test Data：small -> medium -> whole
+  Database Migration and Packing：版本滚动部署，应区分各功能，不应多功能同时进行
+  
+  
+四、Deployment and Testing
+Abstraction and Encapsulation
+Being Efficient : SQL Optimization
+Post-Commit Testing: validation, impact analysis, security validation
+
+=>> Metrics Analysis and Imapct Analysis Details : 
+  1.Locking of Objects
+  2.Saturation of resources
+  3.Data Integrity Issues
+  4.Replication Stalls
+
+1.Downstream Tests: data validation,performance analysis
+2.Operational Tests: Infrastructure, Backup/Recovery/Failover, Capacity
+3.Rollback Testing
