@@ -1,1 +1,45 @@
+一、数据保护方向：
+  1.sever/client：非法获取/未尽保护义务
+  2.数据传输
+  3.数据存储
+  4.备份/归档数据
+  
 
+二、Database Security AS Function
+1.Education and Collaboration
+2.Self-Service Standards: OS/ Operation/ Transfer/ Password & Privileges
+3.Integration and Testing
+4.Operational Visibility: application /database /OS layers [loggings]
+
+
+三、Vulnerabilities and Exploits
+1.弱点
+  spoofing identity
+  tampering with data
+  repudiation
+  information disclosure
+  Denial of service
+  elevation of privileges
+  Network and Authentication Protocols
+  
+2.衡量标准
+  damage potential
+  reproducibility
+  exploitability
+  affected users
+  discoverability
+  
+3.事前预防
+  Configuration
+  Patching
+  Removing unnecessary users
+  Network and host access
+  
+
+四、关于数据安全
+Has all data been classified according to sensitivity?
+Is there a standard on cipher suites, and is it audited for compliance?
+Are new reports of vulnerabilities and exploits being tracked and considered?
+Are new hires in SWE,SRE,Ops,DBRE aware of centralized libraries and encrption standards?
+Are keys being managed effectively,including rotation,removal,and testing?
+Are you performing regular,automated penetration testing of key components including logs,backups,critical tables,and database connections?
