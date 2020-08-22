@@ -11,3 +11,9 @@
   
   ACID vs BASE (basically available, soft state, and eventual consistency)
   
+2.more details in Figure_10.1.PNG
+
+
+二、The Ubiquitous CAP Theorem Section (Eric Brewer)
+C(onsistency), A(vailability), (Network) P(artition)
+C -> Linearizability
