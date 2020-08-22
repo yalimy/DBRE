@@ -1,1 +1,13 @@
 
+一、Conceptual Attributes of a Datastore
+1.Data Model
+  relational, key-value, document, navigational or graph models
+  [
+    A graph database uses nodes,edges and properties to represent and store data and the connections between objects.
+    nodes hold data of specific object
+    edges are the relationship to another object
+    properties is for additional data of node
+  ]
+  
+  ACID vs BASE (basically available, soft state, and eventual consistency)
+  
