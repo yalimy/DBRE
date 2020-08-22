@@ -1,1 +1,42 @@
 
+一、Data Structure Storage
+1.Database Row Storage
+  a. DB_page VS OS_page VS Hardware-Sector : Event Logs, Redo Logs, WAL(write ahead logs)
+  b. B-Tree+ Structure : leaf-page split/ merge
+  c. LSM(Log-Structrue Merge) Trees : SST(Sorted-String Tables) mapping MemTables
+  d. Bloom Filter : validation existence
+
+
+二、Indexing
+1.Hash index
+2.Bitmap index
+3.Permutations of B-Trees : 
+  Function Based
+  Reverse Index
+  Cluster Index
+  Spatial Index
+  Search Index
+
+
+三、Events/Logs -> Messages System For Databases
+1.Data Replication : 
+  Replication Models: Asynchronous/ Synchronous/ Semi-synchronous
+  Replication Log Formats : SBR/RBR, WAL, Block-level repl, Degrade Stream or Message System (ETL,Rabbit-MQ,etc)
+  
+2.Replication Use Cases
+  Availability
+  Scalability
+  Locality
+  Portability
+  
+3.Issues : MTTR, MTBR
+  keeping replicas synchronized
+  failover
+  monitoring : lag/latency, availability/capacity, consistency
+  
+4.多主冲突检测问题：
+  Eliminate conflicts using Custom Code Before DB
+  Last write wons
+  Conflict-free replicated DataTypes
+  Write-anywhere replication : read/write quorums
+  
