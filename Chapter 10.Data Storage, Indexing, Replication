@@ -38,5 +38,5 @@
   Eliminate conflicts using Custom Code Before DB
   Last write wons
   Conflict-free replicated DataTypes
-  Write-anywhere replication : read/write quorums
+  Write-anywhere replication : read/write quorums, sloppy quorums, anti-entripy(eg,Merkle Tree)
   
