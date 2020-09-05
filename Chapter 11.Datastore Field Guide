@@ -41,3 +41,4 @@ Pre-request :
   Event Sourcing complements traditional storage such as relational or key-value stores by exposing a lower level of data storage
   that functions as events rather than stateful values that can be overwritten.
   
+  ==>> CQRS Module : command-query-responsibility segregation
