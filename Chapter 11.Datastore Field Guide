@@ -17,3 +17,27 @@
 二、The Ubiquitous CAP Theorem Section (Eric Brewer)
 C(onsistency), A(vailability), (Network) P(artition)
 C -> Linearizability
+
+
+三、A Data Architecture Sampler
+Pre-request :
+  Low Latency
+  High Availability and Scalability
+  Low MTTR
+  Easy integration with CI/CD
+  
+1.Data Access Layer
+  DAO : Data Access Objects
+  ORM : Object-Relational Mapper
+  
+2.Database Proxies
+  Layer 4 VS 7
+  
+3.DownStream Function : Event and Message System
+  Downstream Consumers : Caches and Memory Stores
+  Date Architecture : Lambda, Kappa
+  
+4.Event Sourcing : 近原始流，多方订阅，分布式，message system
+  Event Sourcing complements traditional storage such as relational or key-value stores by exposing a lower level of data storage
+  that functions as events rather than stateful values that can be overwritten.
+  
