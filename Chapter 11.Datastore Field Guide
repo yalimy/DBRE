@@ -42,3 +42,25 @@ Pre-request :
   that functions as events rather than stateful values that can be overwritten.
   
   ==>> CQRS Module : command-query-responsibility segregation
+
+
+四、写给DBRE
+1.打破樊篱，让团队更加有凝合力：因为每个人都更加自信、从容应对数据问题
+  积极参与架构设计，推出DB相关规范、HA架构设计、状态监控指标，降低DB的隔离性并增强团队荣誉感
+  不同的APP，适用不同的DB Architecture，最好是成熟的最佳使用规范
+  及时进行DB巡检，预测可能问题及其应对措施，增强DBRE所起的作用
+  建立安全操作文档库/自动操作系统，以便更加安全、从容的应对DB问题
+  
+2.Production Migrations
+  A.建立层次指标，确认哪些操作是safe/dangerous，哪些需要DBRE review，这些可以通过DB indicator测试指标规范
+  B.事后分析：用数据说话
+  
+3.Integration with CI/CD, work like DevOps and SWE
+
+==>>
+4.Data-Driven Decision Making
+  useful SLOs for data-driven decision
+  
+Choosing the areas that consume the most of your time, and that create the largest constraints on other organizations is a skill you would be smart to practice.
+Then,building incremental points of change to build trust and create improvements will build momentum.
+  
